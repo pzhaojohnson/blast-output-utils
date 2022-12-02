@@ -6,6 +6,12 @@ class SearchWrapper:
         self.search = search
 
     @property
+    def query_title(self):
+        query_title = self.search['query_title']
+        assert type(query_title) is str
+        return query_title
+
+    @property
     def hits(self):
         return [HitWrapper(hit) for hit in self.search['hits']]
 

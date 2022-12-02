@@ -18,6 +18,12 @@ class TestSearchProperty(unittest.TestCase):
         self.assertIs(search.search, two_hits)
 
 
+class TestQueryTitleGetter(unittest.TestCase):
+    def test_two_hits(self):
+        search = SearchWrapper(two_hits)
+        self.assertEqual(search.query_title, 'read3')
+
+
 class TestHitsGetter(unittest.TestCase):
     def test_zero_hits(self):
         search = SearchWrapper(zero_hits)
