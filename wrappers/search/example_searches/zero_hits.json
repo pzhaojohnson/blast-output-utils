@@ -1,0 +1,21 @@
+{
+    "query_id": "Query_7",
+    "query_title": "read7",
+    "query_len": 2729,
+    "query_masking": [
+      {
+        "from": 2721,
+        "to": 2727
+      }
+    ],
+    "hits": [],
+    "stat": {
+      "db_num": 1,
+      "db_len": 2692,
+      "hsp_len": 15,
+      "eff_space": 7265378,
+      "kappa": 0.46,
+      "lambda": 1.28,
+      "entropy": 0.85
+    }
+  }
