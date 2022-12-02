@@ -28,5 +28,6 @@ class TestHspsGetter(unittest.TestCase):
         self.assertEqual(len(hit.hsps), 2)
         hsp1 = hit.hsps[0]
         hsp2 = hit.hsps[1]
+        # check just some hsp values
         self.assertEqual(hsp1.query_to, 1008)
         self.assertEqual(hsp2.hit_from, 2678)
