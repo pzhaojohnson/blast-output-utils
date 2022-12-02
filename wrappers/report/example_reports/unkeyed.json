@@ -1,0 +1,71 @@
+{
+    "program": "blastn",
+    "version": "BLASTN 2.13.0+",
+    "reference": "Zheng Zhang, Scott Schwartz, Lukas Wagner, and Webb Miller (2000), \"A greedy algorithm for aligning DNA sequences\", J Comput Biol 2000; 7(1-2):203-14.",
+    "search_target": {
+      "db": "CY1.fasta"
+    },
+    "params": {
+      "expect": 10,
+      "sc_match": 1,
+      "sc_mismatch": -2,
+      "gap_open": 0,
+      "gap_extend": 0,
+      "filter": "L;m;"
+    },
+    "results": {
+      "search": {
+        "query_id": "Query_13",
+        "query_title": "read13",
+        "query_len": 1241,
+        "query_masking": [
+          {
+            "from": 1233,
+            "to": 1239
+          }
+        ],
+        "hits": [
+          {
+            "num": 1,
+            "description": [
+              {
+                "id": "gnl|BL_ORD_ID|0",
+                "accession": "0",
+                "title": "CY1"
+              }
+            ],
+            "len": 2692,
+            "hsps": [
+              {
+                "num": 1,
+                "bit_score": 1692.65,
+                "score": 916,
+                "evalue": 0,
+                "identity": 1173,
+                "query_from": 1,
+                "query_to": 1233,
+                "query_strand": "Plus",
+                "hit_from": 1250,
+                "hit_to": 3,
+                "hit_strand": "Minus",
+                "align_len": 1281,
+                "gaps": 81,
+                "qseq": "AAACGTAAAACTGGAGAAGAATCAC-T-TCCCA-TTGCGCCTTCAAAGTCGCTCCAGATTCTTAATGCATTTAGGCCTTTGGCGATACACGGCTCAGCACCC--ACCATACAACCTTTTACTGAGATCCTTGTAGATGATTCGCTCCAAAGGTTTGAACC---GTCCATCCTCAGCCAAATATT-CTGCTCACCTTGGTTGGATTGCTCGAGGATCAGCCTCCTCCCCTT--AACGCCCTGTCAAATTTCTCGTTCTTA-TGAACG-TTC-A-TCGCGCATC-TTCGGCTTTCAAGAGTGGACCGCATCATATTGTTCGACGGCTTGGGCGTATGTAACGAGTACGCTGTCGGCCTTCATAGCAATTGAGAAACC--TCATCAACTT-ATCGATAGACGGTAGAAGGTTTGGACTTCCTATAGCTCAGCTATCCGAAGGTTAAGTCGGTGAAGGGCTTCAGAAGAGGGAAGGATCGGATCACCTCGGCCCTTTGTACTGCAACCTACGTGTGGTCATCACACGTCCAAG-TTGTTAGCCGAGCACGCGTGAT--ACGAATTGAGCACGAGGTGTTGGAAGTAACAAGGTCTCTGAGACAGTCGTCGACTTTGCCTCCAGGGTCGCGGAACCGGA-GCAGTCGGAGTTCAGAAGCTAGAGGCACTGCTTTTGCCTCTAGCCCGTCGACCCCCAATCACTGCAAATCGCCGAAA-CCTGGTGGCGAGCCAAGGCCTTGTCATGCAAGGTCCTAGTTAACCACAAGGTCGCCGCGACCTGAGCGATATGGGC--TCCTCCCTGGGGCGTAGTCTCCTTGGATATGAACTGACCTACCAAGATCAGCATTCCATGACTCAGGATCTACCCCATTAAGTTGTTTGAGCACC-ATC-CTGAGCCA-T-----GGGTAGGCTCAGAAGCGGGAGGAAGACCGAA-CGGTCCCACAGACGGAGTGCCCATCACCAACTCTTCTACGATATCA-GGTTGGAAACTCCAGAGCACCAT-CG-CCTCTCAAAGTGTCGACTTGCTTGTGGACTACTAACTTCTCTGCGCACTT-CGTACAGAGGGCAGACGGCATGTCGTAAACGAGCTGCAGGCTCAGCAATCACAAATGCCTGGACTCGTTGAAAAGTCATATGCATGGCGACTGGTGGGCATCG--ACCCATCTACGAGCAGCGCGAACCACCTCT--TGAGAAGCTAGTTGATGCTCGAAACACCTGTCTGGCATGATGCCAT-AGGC---GGGCAAAGATGAAGGATCCAT-TTTAC",
+                "hseq": "AAACG-CAAACTGGAGAAGAA-AACTTCTCCCATTTGCGCC-TCAAAGTCGCTCCAGATTCT-AATGCATTTAGGCCTTTGGCGATACACGGCTCAGCACCCTCACCATACAACCTTTTACTGAGATCCTTGTAGATGATTCGCTCCAAAGGTTTGAACCACCGTCCAACCTCAGCCAAATATTTCGGCT-TCCTTGGTTGGATTGCTCGAGGATCAGCCTCCTCCCCTTTCAACGCCCAGTCAAATTTCTCGTTCTTAATGAACGTTTCAACTCGCGCATCTTTCGGC--TCAAGAGTGGACCGCATCA-ACTGCTCGACGGCTTGGGCGTA----ACGAGTACGCTGTCGGCCTTCATAGCAATTGAGAAACCCTTCAT-AACTTAATGGATAGACGGTAGAAGGTCTAGACCT-ATATAGCTCAGCTATCCGAAGGTTAAGTCGGTGAAGGGCTTCAGAAGAGGGAAGGATCGGATC---TCGGCCC-TTGTACTGCAACACACGTGTGGTCATCACACGTCCAAGGTTGTTAGCCGAGCACGCGTGATTCACGAATTGAGCACGAGGTGTTGGAAGTAACAAGGTCT--GAGACAGTCGTCGACTTTG--TCC-GGGTCGCGGAACCGGAAGCAGTCGGAGTCCAGAAGCTAGAGGCACTGCTTTTGCCTCTAGCCCGTCGACCCC-AATCACTGCAAATCGCGAAAACCCTGGTGGCGAGCCAAGGCCTTGTCATGCAAGGTCCTAGTTAACCACAAGGTCGCCGCGACCTGAGCGATATGGGCATTCCTCCCTGGGGCGTAGTCTCCTTGGATATGAACTGACCTACCAAGATCAGCATTCCATGACTCAGGATCTACCCCATTGAGTTGTTTGAGCACCCATCTCTCA-CCACTGAGCCGGGTAGGCTCAGAAGCGGGAGGAAGACCGAAACGGTCCCTCAGACGGAGTGCCCA--ACCAACT-T-CTACGATATCAGGGTTGGGAATTCCAGAGCACCATTCGTCCAC-CAAAGTGTCGACTTGCTTGTGGACTACTAACTTCTCTGCGCACTTTCGTACAGAGGGCAGACGGC--GTCGTAAACGAGCTGCAGGCTCAGCAATCACAA-TGCCTAGACTCGTTGAAAAGTCATATGCATGGCGACTGGTGGGCATGGTAACCCATCTACGAGCAGCGCGAACCACCTCTCTTGAGAAGCTAGTTGATGCTCGAAACACCTGTCTGGCATGATGCCAACAGGCACGGGGCAAAGATGAAGGATCCATATTTAC",
+                "midline": "|||||  ||||||||||||||  || | ||||| ||||||| |||||||||||||||||||| |||||||||||||||||||||||||||||||||||||||  ||||||||||||||||||||||||||||||||||||||||||||||||||||||||   ||||| ||||||||||||||| | |||  ||||||||||||||||||||||||||||||||||||||  ||||||| ||||||||||||||||||| |||||| ||| | ||||||||| ||||||  ||||||||||||||||||| | || |||||||||||||||||    ||||||||||||||||||||||||||||||||||||||  |||| ||||| || ||||||||||||||||| | ||| |  ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||   ||||||| ||||||||||||  |||||||||||||||||||||||| ||||||||||||||||||||||  |||||||||||||||||||||||||||||||||||||  |||||||||||||||||||  ||| |||||||||||||||| ||||||||||| ||||||||||||||||||||||||||||||||||||||||||| ||||||||||||||||  ||| ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| ||||||||||||||| ||| || | ||| |     ||||||||||||||||||||||||||||||| ||||||| |||||||||||||||  ||||||| | ||||||||||| |||||| || ||||||||||||| || || | ||||||||||||||||||||||||||||||||||||||||||||| |||||||||||||||||||  ||||||||||||||||||||||||||||||||| ||||| |||||||||||||||||||||||||||||||||||||||| |  ||||||||||||||||||||||||||||||  |||||||||||||||||||||||||||||||||||||||||||||  ||||   ||||||||||||||||||||| |||||"
+              }
+            ]
+          }
+        ],
+        "stat": {
+          "db_num": 1,
+          "db_len": 2692,
+          "hsp_len": 14,
+          "eff_space": 3285906,
+          "kappa": 0.46,
+          "lambda": 1.28,
+          "entropy": 0.85
+        }
+      }
+    }
+  }
