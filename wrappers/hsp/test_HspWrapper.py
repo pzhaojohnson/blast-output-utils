@@ -2,10 +2,10 @@ import unittest
 
 import json
 
-from wrappers.hsps.HspWrapper import HspWrapper
+from wrappers.hsp.HspWrapper import HspWrapper
 
 
-with open('wrappers/hsps/example_hsps/hsp1.json', 'r') as f:
+with open('wrappers/hsp/example_hsps/hsp1.json', 'r') as f:
     hsp1 = json.loads(f.read())
 
 
