@@ -85,3 +85,39 @@ class TestHitStrandGetter(unittest.TestCase):
     def test_hsp1(self):
         hsp = HspWrapper(hsp1)
         self.assertEqual(hsp.hit_strand, 'Minus')
+
+
+class TestHasPlusHitStrandMethod(unittest.TestCase):
+    def test_plus_hit_strand(self):
+        # make deep copy
+        plus_hit_strand = json.loads(json.dumps(hsp1))
+        # test unusual letter casing
+        plus_hit_strand['hit_strand'] = 'PLus'
+        hsp = HspWrapper(plus_hit_strand)
+        self.assertTrue(hsp.has_plus_hit_strand())
+
+    def test_minus_hit_strand(self):
+        # make deep copy
+        minus_hit_strand = json.loads(json.dumps(hsp1))
+        # test unusual letter casing
+        minus_hit_strand['hit_strand'] = 'minUS'
+        hsp = HspWrapper(minus_hit_strand)
+        self.assertFalse(hsp.has_plus_hit_strand())
+
+
+class TestHasMinusHitStrandMethod(unittest.TestCase):
+    def test_plus_hit_strand(self):
+        # make deep copy
+        plus_hit_strand = json.loads(json.dumps(hsp1))
+        # test unusual letter casing
+        plus_hit_strand['hit_strand'] = 'PluS'
+        hsp = HspWrapper(plus_hit_strand)
+        self.assertFalse(hsp.has_minus_hit_strand())
+
+    def test_minus_hit_strand(self):
+        # make deep copy
+        minus_hit_strand = json.loads(json.dumps(hsp1))
+        # test unusual letter casing
+        minus_hit_strand['hit_strand'] = 'MInuS'
+        hsp = HspWrapper(minus_hit_strand)
+        self.assertTrue(hsp.has_minus_hit_strand())

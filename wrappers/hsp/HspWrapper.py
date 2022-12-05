@@ -43,3 +43,9 @@ class HspWrapper:
         hit_strand = self.hsp['hit_strand']
         assert type(hit_strand) is str
         return hit_strand
+
+    def has_plus_hit_strand(self):
+        return self.hit_strand.lower() == 'plus'
+
+    def has_minus_hit_strand(self):
+        return self.hit_strand.lower() == 'minus'
