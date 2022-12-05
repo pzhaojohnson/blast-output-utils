@@ -33,6 +33,42 @@ class TestQueryStrandGetter(unittest.TestCase):
         self.assertEqual(hsp.query_strand, 'Plus')
 
 
+class TestHasPlusQueryStrandMethod(unittest.TestCase):
+    def test_plus_query_strand(self):
+        # make deep copy
+        plus_query_strand = json.loads(json.dumps(hsp1))
+        # test unusual letter casing
+        plus_query_strand['query_strand'] = 'pLUs'
+        hsp = HspWrapper(plus_query_strand)
+        self.assertTrue(hsp.has_plus_query_strand())
+
+    def test_minus_query_strand(self):
+        # make deep copy
+        minus_query_strand = json.loads(json.dumps(hsp1))
+        # test unusual letter casing
+        minus_query_strand['query_strand'] = 'MInUs'
+        hsp = HspWrapper(minus_query_strand)
+        self.assertFalse(hsp.has_plus_query_strand())
+
+
+class TestHasMinusQueryStrandMethod(unittest.TestCase):
+    def test_plus_query_strand(self):
+        # make deep copy
+        plus_query_strand = json.loads(json.dumps(hsp1))
+        # test unusual letter casing
+        plus_query_strand['query_strand'] = 'PluS'
+        hsp = HspWrapper(plus_query_strand)
+        self.assertFalse(hsp.has_minus_query_strand())
+
+    def test_minus_query_strand(self):
+        # make deep copy
+        minus_query_strand = json.loads(json.dumps(hsp1))
+        # test unusual letter casing
+        minus_query_strand['query_strand'] = 'miNUs'
+        hsp = HspWrapper(minus_query_strand)
+        self.assertTrue(hsp.has_minus_query_strand())
+
+
 class TestHitFromGetter(unittest.TestCase):
     def test_hsp1(self):
         hsp = HspWrapper(hsp1)

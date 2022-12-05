@@ -20,6 +20,12 @@ class HspWrapper:
         assert type(query_strand) is str
         return query_strand
 
+    def has_plus_query_strand(self):
+        return self.query_strand.lower() == 'plus'
+
+    def has_minus_query_strand(self):
+        return self.query_strand.lower() == 'minus'
+
     @property
     def hit_from(self):
         hit_from = self.hsp['hit_from']
