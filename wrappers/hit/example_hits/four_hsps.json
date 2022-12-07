@@ -69,7 +69,7 @@
         "score": 232,
         "evalue": 8.64435e-123,
         "identity": 321,
-        "query_from": 2053,
+        "query_from": 2051,
         "query_to": 2398,
         "query_strand": "Plus",
         "hit_from": 1366,

@@ -12,6 +12,12 @@ class HitWrapper:
         return [HspWrapper(hsp) for hsp in self.hit['hsps']]
 
     @property
+    def hsps_sorted_by_query_from(self):
+        hsps = self.hsps
+        hsps.sort(key=operator.attrgetter('query_from'))
+        return hsps
+
+    @property
     def hsps_sorted_by_hit_from(self):
         hsps = self.hsps
         hsps.sort(key=operator.attrgetter('hit_from'))

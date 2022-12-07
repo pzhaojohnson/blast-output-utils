@@ -51,3 +51,20 @@ class TestHspsSortedByHitFromGetter(unittest.TestCase):
         self.assertEqual(hsps_sorted_by_hit_from[1].hit_from, 1366)
         self.assertEqual(hsps_sorted_by_hit_from[2].hit_from, 2366)
         self.assertEqual(hsps_sorted_by_hit_from[3].hit_from, 2371)
+
+
+class TestHspsSortedByQueryFromGetter(unittest.TestCase):
+    def test_zero_hsps(self):
+        hit = HitWrapper(zero_hsps)
+        self.assertEqual(len(hit.hsps_sorted_by_query_from), 0)
+
+    def test_four_hsps(self):
+        hit = HitWrapper(four_hsps)
+        hsps_sorted_by_query_from = hit.hsps_sorted_by_query_from
+        # check that hsps are not already sorted
+        self.assertNotEqual(hsps_sorted_by_query_from, hit.hsps)
+        self.assertEqual(len(hsps_sorted_by_query_from), 4)
+        self.assertEqual(hsps_sorted_by_query_from[0].query_from, 1017)
+        self.assertEqual(hsps_sorted_by_query_from[1].query_from, 2051)
+        self.assertEqual(hsps_sorted_by_query_from[2].query_from, 2053)
+        self.assertEqual(hsps_sorted_by_query_from[3].query_from, 2691)
