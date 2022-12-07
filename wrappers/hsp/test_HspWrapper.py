@@ -8,6 +8,12 @@ from wrappers.hsp.HspWrapper import HspWrapper
 with open('wrappers/hsp/example_hsps/hsp1.json', 'r') as f:
     hsp1 = json.loads(f.read())
 
+with open('wrappers/hsp/example_hsps/plus_hit_strand.json', 'r') as f:
+    plus_hit_strand = json.loads(f.read())
+
+with open('wrappers/hsp/example_hsps/minus_hit_strand.json', 'r') as f:
+    minus_hit_strand = json.loads(f.read())
+
 
 class TestHspProperty(unittest.TestCase):
     def test_hsp1(self):
@@ -121,3 +127,19 @@ class TestHasMinusHitStrandMethod(unittest.TestCase):
         minus_hit_strand['hit_strand'] = 'MInuS'
         hsp = HspWrapper(minus_hit_strand)
         self.assertTrue(hsp.has_minus_hit_strand())
+
+
+class TestCoveredHitPositionsGetter(unittest.TestCase):
+    def test_plus_hit_strand(self):
+        hsp = HspWrapper(plus_hit_strand)
+        # hit_from is less than hit_to
+        self.assertLess(hsp.hit_from, hsp.hit_to)
+        ps = hsp.covered_hit_positions
+        self.assertEqual(ps, set([p for p in range(1223, 2377)]))
+
+    def test_minus_hit_strand(self):
+        hsp = HspWrapper(minus_hit_strand)
+        # hit_from is greater than hit_to
+        self.assertGreater(hsp.hit_from, hsp.hit_to)
+        ps = hsp.covered_hit_positions
+        self.assertEqual(ps, set([p for p in range(23, 2372)]))

@@ -49,3 +49,9 @@ class HspWrapper:
 
     def has_minus_hit_strand(self):
         return self.hit_strand.lower() == 'minus'
+
+    @property
+    def covered_hit_positions(self):
+        pmin = min(self.hit_from, self.hit_to)
+        pmax = max(self.hit_from, self.hit_to)
+        return set([p for p in range(pmin, pmax + 1)])
