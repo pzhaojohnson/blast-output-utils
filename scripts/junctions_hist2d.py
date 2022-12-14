@@ -84,6 +84,7 @@ for hit in hits_with_multiple_hsps:
 
 print('Junctions: ' + str(len(junctions)))
 
+"""
 xs = list(map(lambda junction : junction[0], junctions))
 ys = list(map(lambda junction : junction[1], junctions))
 
@@ -96,6 +97,69 @@ ax.hist2d(xs, ys, bins=bins, cmin=1, cmap=mpl.cm.Blues)
 #ax.hexbin(xs, ys, gridsize=53.84, mincnt=1, cmap=mpl.cm.Blues)
 
 #ax.set(xlim=(1, virus_genome_length), ylim=(1, virus_genome_length))
-ax.set(xlim=(667, 682), ylim=(2688, 2711))
+ax.set(xlim=(665, 675), ylim=(2408, 2418))
 
 plt.show()
+"""
+
+# print blank line
+print()
+
+di_searches = []
+for search in searches:
+    if search.num_hits > 0:
+        assert search.num_hits == 1 # none should have multiple hits
+        hit = search.hits[0]
+        if len(hit.hsps) == 2:
+            hsps = hit.hsps_sorted_by_hit_from
+            if hsps[0].hit_to == 671 and hsps[1].hit_from == 2703:
+                di_searches.append(search)
+print('DI-RNA searches: ' + str(len(di_searches)))
+
+di_hits = [search.hits[0] for search in di_searches]
+
+"""
+di_hits = []
+for hit in hits_with_two_hsps:
+    hsps = hit.hsps_sorted_by_hit_from
+    if hsps[0].hit_to == 670 and hsps[1].hit_from == 2692:
+        di_hits.append(hit)
+print('DI-RNA hits: ' + str(len(di_hits)))
+"""
+
+# print blank line
+#print()
+#print(di_searches[1].query_title)
+
+
+"""
+query_to_minus_from = []
+for hit in di_hits:
+    hsps = hit.hsps_sorted_by_hit_from
+    query_to_minus_from.append(hsps[1].query_from - hsps[0].query_to)
+
+fig, ax = plt.subplots()
+
+ax.hist(
+    query_to_minus_from,
+    bins=[-10.5, -9.5, -8.5, -7.5, -6.5, -5.5, -4.5, -3.5, -2.5, -1.5, -0.5, 0.5],
+)
+
+ax.set(
+    xlim=(-10.5, 0.5),
+    xticks=[-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0],
+)
+
+plt.show()
+"""
+
+# print blank line
+print()
+
+bases7 = []
+for hit in di_hits:
+    hsp = hit.hsps_sorted_by_hit_from[0]
+    qseq = hsp.hsp['qseq']
+    bases7.append(qseq[-7:])
+for bs in bases7:
+    print(bs)
