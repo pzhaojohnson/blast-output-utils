@@ -94,7 +94,7 @@ for hsp in plus_minus_hsps:
     for i in range(len(xs)):
         y = hsp.hit_from + (hit_length * (i / len(xs)))
         ys.append(y)
-    ax.plot(xs, ys, color='black', alpha=0.2)
+    ax.plot(xs, ys, color='black', alpha=0.25)
 
 print('Showing histogram plot.')
 plt.show()
