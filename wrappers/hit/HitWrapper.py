@@ -8,6 +8,10 @@ class HitWrapper:
         self.hit = hit
 
     @property
+    def description(self):
+        return self.hit['description']
+
+    @property
     def hsps(self):
         return [HspWrapper(hsp) for hsp in self.hit['hsps']]
 

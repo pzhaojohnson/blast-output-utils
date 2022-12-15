@@ -24,6 +24,14 @@ class TestHitProperty(unittest.TestCase):
         self.assertIs(hit.hit, zero_hsps)
 
 
+class TestDescriptionGetter(unittest.TestCase):
+    def test_two_hsps(self):
+        hit = HitWrapper(two_hsps)
+        self.assertEqual(hit.description[0]['id'], 'gnl|BL_ORD_ID|0')
+        self.assertEqual(hit.description[0]['accession'], '0')
+        self.assertEqual(hit.description[0]['title'], 'CY1')
+
+
 class TestHspsGetter(unittest.TestCase):
     def test_zero_hsps(self):
         hit = HitWrapper(zero_hsps)
