@@ -14,6 +14,9 @@ with open('wrappers/hit/example_hits/two_hsps.json', 'r') as f:
 with open('wrappers/hit/example_hits/four_hsps.json', 'r') as f:
     four_hsps = json.loads(f.read())
 
+with open('wrappers/hit/example_hits/five_hsps.json', 'r') as f:
+    five_hsps = json.loads(f.read())
+
 
 class TestHitProperty(unittest.TestCase):
     def test_zero_hsps(self):
@@ -68,3 +71,13 @@ class TestHspsSortedByQueryFromGetter(unittest.TestCase):
         self.assertEqual(hsps_sorted_by_query_from[1].query_from, 2051)
         self.assertEqual(hsps_sorted_by_query_from[2].query_from, 2053)
         self.assertEqual(hsps_sorted_by_query_from[3].query_from, 2691)
+
+class TestCoveredHitPositionsGetter(unittest.TestCase):
+    def test_zero_hsps(self):
+        hit = HitWrapper(zero_hsps)
+        self.assertEqual(len(hit.covered_hit_positions), 0)
+
+    def test_five_hsps(self):
+        hit = HitWrapper(five_hsps)
+        ps = set([p for p in range(71, 2477)])
+        self.assertEqual(hit.covered_hit_positions, ps)

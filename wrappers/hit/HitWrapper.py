@@ -22,3 +22,10 @@ class HitWrapper:
         hsps = self.hsps
         hsps.sort(key=operator.attrgetter('hit_from'))
         return hsps
+
+    @property
+    def covered_hit_positions(self):
+        covered_hit_positions = set()
+        for hsp in self.hsps:
+            covered_hit_positions.update(hsp.covered_hit_positions)
+        return covered_hit_positions
