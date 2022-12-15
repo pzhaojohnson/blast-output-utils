@@ -77,7 +77,7 @@ cy1_length = 2692
 bins = [i + 0.5 for i in range(0, cy1_length + 1)]
 
 print('Producing histogram plot... (This might take a little bit.)')
-ax.hist(covered_cy1_positions, bins=bins)
+ax.hist(covered_cy1_positions, bins=bins, color='black')
 
 print('Showing histogram plot.')
 plt.show()
