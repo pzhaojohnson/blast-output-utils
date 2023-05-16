@@ -8,6 +8,11 @@ class HitWrapper:
         self.hit = hit
 
     @property
+    def wrappee(self):
+        """Returns the wrapped hit dictionary."""
+        return self.hit
+
+    @property
     def description(self):
         return self.hit['description']
 

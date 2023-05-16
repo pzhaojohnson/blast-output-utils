@@ -24,6 +24,12 @@ class TestHitProperty(unittest.TestCase):
         self.assertIs(hit.hit, zero_hsps)
 
 
+class TestWrappeeGetter(unittest.TestCase):
+    def test_zero_hsps(self):
+        hit = HitWrapper(zero_hsps)
+        self.assertIs(hit.wrappee, zero_hsps)
+
+
 class TestDescriptionGetter(unittest.TestCase):
     def test_two_hsps(self):
         hit = HitWrapper(two_hsps)
