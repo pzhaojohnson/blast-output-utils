@@ -17,14 +17,14 @@ with open(examples_directory_path + 'zero_reports.json', 'r') as f:
     zero_reports = json.loads(f.read())
 
 
-class TestBlastOutput2Property(unittest.TestCase):
+class TestWrappeeProperty(unittest.TestCase):
     def test_unkeyed(self):
         blast_output2 = BlastOutput2Wrapper(unkeyed)
-        self.assertIs(blast_output2.blast_output2, unkeyed)
+        self.assertIs(blast_output2.wrappee, unkeyed)
 
     def test_keyed(self):
         blast_output2 = BlastOutput2Wrapper(keyed)
-        self.assertIs(blast_output2.blast_output2, keyed['BlastOutput2'])
+        self.assertIs(blast_output2.wrappee, keyed['BlastOutput2'])
 
 
 class TestReportsGetter(unittest.TestCase):

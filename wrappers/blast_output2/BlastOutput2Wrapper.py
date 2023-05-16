@@ -2,12 +2,12 @@ from wrappers.report.ReportWrapper import ReportWrapper
 
 
 class BlastOutput2Wrapper:
-    def __init__(self, blast_output2):
-        if 'BlastOutput2' in blast_output2:
-            self.blast_output2 = blast_output2['BlastOutput2']
+    def __init__(self, wrappee):
+        if 'BlastOutput2' in wrappee:
+            self.wrappee = wrappee['BlastOutput2']
         else:
-            self.blast_output2 = blast_output2
+            self.wrappee = wrappee
 
     @property
     def reports(self):
-        return [ReportWrapper(report) for report in self.blast_output2]
+        return [ReportWrapper(report) for report in self.wrappee]
