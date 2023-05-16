@@ -12,13 +12,13 @@ class SearchWrapper:
 
     @property
     def query_title(self):
-        query_title = self.search['query_title']
+        query_title = self.wrappee['query_title']
         assert type(query_title) is str
         return query_title
 
     @property
     def hits(self):
-        return [HitWrapper(hit) for hit in self.search['hits']]
+        return [HitWrapper(hit) for hit in self.wrappee['hits']]
 
     @property
     def num_hits(self):
