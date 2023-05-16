@@ -2,13 +2,8 @@ from wrappers.hit.HitWrapper import HitWrapper
 
 
 class SearchWrapper:
-    def __init__(self, search):
-        self.search = search
-
-    @property
-    def wrappee(self):
-        """Returns the wrapped search dictionary."""
-        return self.search
+    def __init__(self, wrappee):
+        self.wrappee = wrappee
 
     @property
     def query_title(self):

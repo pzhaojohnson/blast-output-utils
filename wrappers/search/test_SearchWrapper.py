@@ -12,13 +12,7 @@ with open('wrappers/search/example_searches/two_hits.json', 'r') as f:
     two_hits = json.loads(f.read())
 
 
-class TestSearchProperty(unittest.TestCase):
-    def test_two_hits(self):
-        search = SearchWrapper(two_hits)
-        self.assertIs(search.search, two_hits)
-
-
-class TestWrappeeGetter(unittest.TestCase):
+class TestWrappeeProperty(unittest.TestCase):
     def test_two_hits(self):
         search = SearchWrapper(two_hits)
         self.assertIs(search.wrappee, two_hits)
