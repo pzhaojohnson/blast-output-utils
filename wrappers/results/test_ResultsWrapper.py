@@ -9,10 +9,10 @@ with open('wrappers/results/example_results/results1.json', 'r') as f:
     results1 = json.loads(f.read())
 
 
-class TestResultsProperty(unittest.TestCase):
+class TestWrappeeProperty(unittest.TestCase):
     def test_results1(self):
         results = ResultsWrapper(results1)
-        self.assertIs(results.results, results1)
+        self.assertIs(results.wrappee, results1)
 
 
 class TestSearchGetter(unittest.TestCase):
