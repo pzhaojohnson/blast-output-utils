@@ -4,13 +4,8 @@ import operator
 
 
 class HitWrapper:
-    def __init__(self, hit):
-        self.hit = hit
-
-    @property
-    def wrappee(self):
-        """Returns the wrapped hit dictionary."""
-        return self.hit
+    def __init__(self, wrappee):
+        self.wrappee = wrappee
 
     @property
     def description(self):
