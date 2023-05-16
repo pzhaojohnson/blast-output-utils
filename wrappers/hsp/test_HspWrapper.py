@@ -21,6 +21,12 @@ class TestHspProperty(unittest.TestCase):
         self.assertIs(hsp.hsp, hsp1)
 
 
+class TestWrappeeGetter(unittest.TestCase):
+    def test_hsp1(self):
+        hsp = HspWrapper(hsp1)
+        self.assertIs(hsp.wrappee, hsp1)
+
+
 class TestQueryFromGetter(unittest.TestCase):
     def test_hsp1(self):
         hsp = HspWrapper(hsp1)

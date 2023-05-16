@@ -3,6 +3,11 @@ class HspWrapper:
         self.hsp = hsp
 
     @property
+    def wrappee(self):
+        """Returns the wrapped hsp dictionary."""
+        return self.hsp
+
+    @property
     def query_from(self):
         query_from = self.hsp['query_from']
         assert type(query_from) is int
