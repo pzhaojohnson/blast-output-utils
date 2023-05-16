@@ -12,14 +12,14 @@ with open('wrappers/report/example_reports/keyed.json', 'r') as f:
     keyed = json.loads(f.read())
 
 
-class TestReportProperty(unittest.TestCase):
+class TestWrappeeProperty(unittest.TestCase):
     def test_unkeyed(self):
         report = ReportWrapper(unkeyed)
-        self.assertIs(report.report, unkeyed)
+        self.assertIs(report.wrappee, unkeyed)
 
     def test_keyed(self):
         report = ReportWrapper(keyed)
-        self.assertIs(report.report, keyed['report'])
+        self.assertIs(report.wrappee, keyed['report'])
 
 
 class TestResultsGetter(unittest.TestCase):

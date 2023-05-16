@@ -2,12 +2,12 @@ from wrappers.results.ResultsWrapper import ResultsWrapper
 
 
 class ReportWrapper:
-    def __init__(self, report):
-        if 'report' in report:
-            self.report = report['report']
+    def __init__(self, wrappee):
+        if 'report' in wrappee:
+            self.wrappee = wrappee['report']
         else:
-            self.report = report
+            self.wrappee = wrappee
 
     @property
     def results(self):
-        return ResultsWrapper(self.report['results'])
+        return ResultsWrapper(self.wrappee['results'])
