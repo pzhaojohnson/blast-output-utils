@@ -14,11 +14,11 @@ class HitWrapper:
 
     @property
     def description(self):
-        return self.hit['description']
+        return self.wrappee['description']
 
     @property
     def hsps(self):
-        return [HspWrapper(hsp) for hsp in self.hit['hsps']]
+        return [HspWrapper(hsp) for hsp in self.wrappee['hsps']]
 
     @property
     def hsps_sorted_by_query_from(self):
