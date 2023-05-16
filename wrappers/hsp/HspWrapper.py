@@ -1,11 +1,6 @@
 class HspWrapper:
-    def __init__(self, hsp):
-        self.hsp = hsp
-
-    @property
-    def wrappee(self):
-        """Returns the wrapped hsp dictionary."""
-        return self.hsp
+    def __init__(self, wrappee):
+        self.wrappee = wrappee
 
     @property
     def query_from(self):

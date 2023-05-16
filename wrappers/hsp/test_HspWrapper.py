@@ -15,13 +15,7 @@ with open('wrappers/hsp/example_hsps/minus_hit_strand.json', 'r') as f:
     minus_hit_strand = json.loads(f.read())
 
 
-class TestHspProperty(unittest.TestCase):
-    def test_hsp1(self):
-        hsp = HspWrapper(hsp1)
-        self.assertIs(hsp.hsp, hsp1)
-
-
-class TestWrappeeGetter(unittest.TestCase):
+class TestWrappeeProperty(unittest.TestCase):
     def test_hsp1(self):
         hsp = HspWrapper(hsp1)
         self.assertIs(hsp.wrappee, hsp1)
