@@ -6,6 +6,11 @@ class SearchWrapper:
         self.search = search
 
     @property
+    def wrappee(self):
+        """Returns the wrapped search dictionary."""
+        return self.search
+
+    @property
     def query_title(self):
         query_title = self.search['query_title']
         assert type(query_title) is str

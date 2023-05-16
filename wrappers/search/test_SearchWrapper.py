@@ -18,6 +18,12 @@ class TestSearchProperty(unittest.TestCase):
         self.assertIs(search.search, two_hits)
 
 
+class TestWrappeeGetter(unittest.TestCase):
+    def test_two_hits(self):
+        search = SearchWrapper(two_hits)
+        self.assertIs(search.wrappee, two_hits)
+
+
 class TestQueryTitleGetter(unittest.TestCase):
     def test_two_hits(self):
         search = SearchWrapper(two_hits)
