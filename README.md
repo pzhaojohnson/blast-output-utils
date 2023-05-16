@@ -1,1 +1,1 @@
-# blast-output-analysis
+# blast-output-wrapper
