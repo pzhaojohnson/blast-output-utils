@@ -7,8 +7,11 @@ from wrappers.results.ResultsWrapper import ResultsWrapper
 
 example_results_dir_path = 'wrappers/results/example_results/'
 
+example_results = {}
+
 with open(example_results_dir_path + 'results1.json', 'r') as f:
     results1 = json.loads(f.read())
+    example_results['results1'] = results1
 
 
 class TestWrappeeProperty(unittest.TestCase):
