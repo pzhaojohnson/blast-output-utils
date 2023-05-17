@@ -20,23 +20,25 @@ with open(example_reports_dir_path + 'keyed.json', 'r') as f:
 
 class TestWrappeeProperty(unittest.TestCase):
     def test_unkeyed(self):
-        report = ReportWrapper(unkeyed)
-        self.assertIs(report.wrappee, unkeyed)
+        wrappee = example_reports['unkeyed']
+        report = ReportWrapper(wrappee)
+        self.assertIs(report.wrappee, wrappee)
 
     def test_keyed(self):
-        report = ReportWrapper(keyed)
-        self.assertIs(report.wrappee, keyed['report'])
+        wrappee = example_reports['keyed']
+        report = ReportWrapper(wrappee)
+        self.assertIs(report.wrappee, wrappee['report'])
 
 
 class TestResultsGetter(unittest.TestCase):
     def test_unkeyed(self):
-        report = ReportWrapper(unkeyed)
+        report = ReportWrapper(example_reports['unkeyed'])
         results = report.results
         # just check one results value
         self.assertEqual(results.search.hits[0].hsps[0].hit_from, 1250)
 
     def test_keyed(self):
-        report = ReportWrapper(keyed)
+        report = ReportWrapper(example_reports['keyed'])
         results = report.results
         # just check one results value
         self.assertEqual(results.search.hits[0].hsps[0].query_to, 195)
