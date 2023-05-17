@@ -5,16 +5,18 @@ import json
 from wrappers.hit.HitWrapper import HitWrapper
 
 
-with open('wrappers/hit/example_hits/zero_hsps.json', 'r') as f:
+example_hits_dir_path = 'wrappers/hit/example_hits/'
+
+with open(example_hits_dir_path + 'zero_hsps.json', 'r') as f:
     zero_hsps = json.loads(f.read())
 
-with open('wrappers/hit/example_hits/two_hsps.json', 'r') as f:
+with open(example_hits_dir_path + 'two_hsps.json', 'r') as f:
     two_hsps = json.loads(f.read())
 
-with open('wrappers/hit/example_hits/four_hsps.json', 'r') as f:
+with open(example_hits_dir_path + 'four_hsps.json', 'r') as f:
     four_hsps = json.loads(f.read())
 
-with open('wrappers/hit/example_hits/five_hsps.json', 'r') as f:
+with open(example_hits_dir_path + 'five_hsps.json', 'r') as f:
     five_hsps = json.loads(f.read())
 
 
