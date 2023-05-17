@@ -5,10 +5,12 @@ import json
 from wrappers.report.ReportWrapper import ReportWrapper
 
 
-with open('wrappers/report/example_reports/unkeyed.json', 'r') as f:
+example_reports_dir_path = 'wrappers/report/example_reports/'
+
+with open(example_reports_dir_path + 'unkeyed.json', 'r') as f:
     unkeyed = json.loads(f.read())
 
-with open('wrappers/report/example_reports/keyed.json', 'r') as f:
+with open(example_reports_dir_path + 'keyed.json', 'r') as f:
     keyed = json.loads(f.read())
 
 
