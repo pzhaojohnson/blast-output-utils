@@ -7,11 +7,15 @@ from wrappers.report.ReportWrapper import ReportWrapper
 
 example_reports_dir_path = 'wrappers/report/example_reports/'
 
+example_reports = {}
+
 with open(example_reports_dir_path + 'unkeyed.json', 'r') as f:
     unkeyed = json.loads(f.read())
+    example_reports['unkeyed'] = unkeyed
 
 with open(example_reports_dir_path + 'keyed.json', 'r') as f:
     keyed = json.loads(f.read())
+    example_reports['keyed'] = keyed
 
 
 class TestWrappeeProperty(unittest.TestCase):
