@@ -28,17 +28,18 @@ with open(example_hits_dir_path + 'five_hsps.json', 'r') as f:
 
 class TestWrappeeProperty(unittest.TestCase):
     def test_zero_hsps(self):
-        hit = HitWrapper(zero_hsps)
-        self.assertIs(hit.wrappee, zero_hsps)
+        wrappee = example_hits['zero_hsps']
+        hit = HitWrapper(wrappee)
+        self.assertIs(hit.wrappee, wrappee)
 
 
 class TestHspsGetter(unittest.TestCase):
     def test_zero_hsps(self):
-        hit = HitWrapper(zero_hsps)
+        hit = HitWrapper(example_hits['zero_hsps'])
         self.assertEqual(len(hit.hsps), 0)
 
     def test_two_hsps(self):
-        hit = HitWrapper(two_hsps)
+        hit = HitWrapper(example_hits['two_hsps'])
         self.assertEqual(len(hit.hsps), 2)
         hsp1 = hit.hsps[0]
         hsp2 = hit.hsps[1]
@@ -49,11 +50,11 @@ class TestHspsGetter(unittest.TestCase):
 
 class TestHspsSortedByHitFromGetter(unittest.TestCase):
     def test_zero_hsps(self):
-        hit = HitWrapper(zero_hsps)
+        hit = HitWrapper(example_hits['zero_hsps'])
         self.assertEqual(len(hit.hsps_sorted_by_hit_from), 0)
 
     def test_four_hsps(self):
-        hit = HitWrapper(four_hsps)
+        hit = HitWrapper(example_hits['four_hsps'])
         hsps_sorted_by_hit_from = hit.hsps_sorted_by_hit_from
         # check that hsps are not already sorted
         self.assertNotEqual(hsps_sorted_by_hit_from, hit.hsps)
@@ -66,11 +67,11 @@ class TestHspsSortedByHitFromGetter(unittest.TestCase):
 
 class TestHspsSortedByQueryFromGetter(unittest.TestCase):
     def test_zero_hsps(self):
-        hit = HitWrapper(zero_hsps)
+        hit = HitWrapper(example_hits['zero_hsps'])
         self.assertEqual(len(hit.hsps_sorted_by_query_from), 0)
 
     def test_four_hsps(self):
-        hit = HitWrapper(four_hsps)
+        hit = HitWrapper(example_hits['four_hsps'])
         hsps_sorted_by_query_from = hit.hsps_sorted_by_query_from
         # check that hsps are not already sorted
         self.assertNotEqual(hsps_sorted_by_query_from, hit.hsps)
@@ -82,10 +83,10 @@ class TestHspsSortedByQueryFromGetter(unittest.TestCase):
 
 class TestCoveredHitPositionsGetter(unittest.TestCase):
     def test_zero_hsps(self):
-        hit = HitWrapper(zero_hsps)
+        hit = HitWrapper(example_hits['zero_hsps'])
         self.assertEqual(len(hit.covered_hit_positions), 0)
 
     def test_five_hsps(self):
-        hit = HitWrapper(five_hsps)
+        hit = HitWrapper(example_hits['five_hsps'])
         ps = set([p for p in range(71, 2477)])
         self.assertEqual(hit.covered_hit_positions, ps)
