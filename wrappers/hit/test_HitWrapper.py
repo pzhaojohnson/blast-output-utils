@@ -7,17 +7,23 @@ from wrappers.hit.HitWrapper import HitWrapper
 
 example_hits_dir_path = 'wrappers/hit/example_hits/'
 
+example_hits = {}
+
 with open(example_hits_dir_path + 'zero_hsps.json', 'r') as f:
     zero_hsps = json.loads(f.read())
+    example_hits['zero_hsps'] = zero_hsps
 
 with open(example_hits_dir_path + 'two_hsps.json', 'r') as f:
     two_hsps = json.loads(f.read())
+    example_hits['two_hsps'] = two_hsps
 
 with open(example_hits_dir_path + 'four_hsps.json', 'r') as f:
     four_hsps = json.loads(f.read())
+    example_hits['four_hsps'] = four_hsps
 
 with open(example_hits_dir_path + 'five_hsps.json', 'r') as f:
     five_hsps = json.loads(f.read())
+    example_hits['five_hsps'] = five_hsps
 
 
 class TestWrappeeProperty(unittest.TestCase):
