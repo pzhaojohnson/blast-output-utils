@@ -24,17 +24,20 @@ with open(examples_directory_path + 'zero_reports.json', 'r') as f:
 
 class TestWrappeeProperty(unittest.TestCase):
     def test_unkeyed(self):
-        blast_output2 = BlastOutput2Wrapper(unkeyed)
-        self.assertIs(blast_output2.wrappee, unkeyed)
+        wrappee = example_blast_output2s['unkeyed']
+        blast_output2 = BlastOutput2Wrapper(wrappee)
+        self.assertIs(blast_output2.wrappee, wrappee)
 
     def test_keyed(self):
-        blast_output2 = BlastOutput2Wrapper(keyed)
-        self.assertIs(blast_output2.wrappee, keyed['BlastOutput2'])
+        wrappee = example_blast_output2s['keyed']
+        blast_output2 = BlastOutput2Wrapper(wrappee)
+        self.assertIs(blast_output2.wrappee, wrappee['BlastOutput2'])
 
 
 class TestReportsGetter(unittest.TestCase):
     def test_unkeyed(self):
-        blast_output2 = BlastOutput2Wrapper(unkeyed)
+        wrappee = example_blast_output2s['unkeyed']
+        blast_output2 = BlastOutput2Wrapper(wrappee)
         reports = blast_output2.reports
         self.assertEqual(len(reports), 2)
         report1 = reports[0]
@@ -46,7 +49,8 @@ class TestReportsGetter(unittest.TestCase):
         self.assertEqual(hit_from2, 790)
 
     def test_keyed(self):
-        blast_output2 = BlastOutput2Wrapper(keyed)
+        wrappee = example_blast_output2s['keyed']
+        blast_output2 = BlastOutput2Wrapper(wrappee)
         reports = blast_output2.reports
         self.assertEqual(len(reports), 2)
         report1 = reports[0]
@@ -58,6 +62,7 @@ class TestReportsGetter(unittest.TestCase):
         self.assertEqual(hit_from2, 1223)
 
     def test_zero_reports(self):
-        blast_output2 = BlastOutput2Wrapper(zero_reports)
+        wrappee = example_blast_output2s['zero_reports']
+        blast_output2 = BlastOutput2Wrapper(wrappee)
         reports = blast_output2.reports
         self.assertEqual(len(reports), 0)
