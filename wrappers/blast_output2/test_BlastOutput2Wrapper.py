@@ -5,17 +5,17 @@ import json
 from wrappers.blast_output2.BlastOutput2Wrapper import BlastOutput2Wrapper
 
 
-examples_directory_path = 'wrappers/blast_output2/example_blast_output2s/'
+example_blast_output2s_dir_path = 'wrappers/blast_output2/example_blast_output2s/'
 
 example_blast_output2s = {}
 
-with open(examples_directory_path + 'unkeyed.json', 'r') as f:
+with open(example_blast_output2s_dir_path + 'unkeyed.json', 'r') as f:
     example_blast_output2s['unkeyed'] = json.loads(f.read())
 
-with open(examples_directory_path + 'keyed.json', 'r') as f:
+with open(example_blast_output2s_dir_path + 'keyed.json', 'r') as f:
     example_blast_output2s['keyed'] = json.loads(f.read())
 
-with open(examples_directory_path + 'zero_reports.json', 'r') as f:
+with open(example_blast_output2s_dir_path + 'zero_reports.json', 'r') as f:
     example_blast_output2s['zero_reports'] = json.loads(f.read())
 
 
