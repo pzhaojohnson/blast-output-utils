@@ -20,23 +20,24 @@ with open(example_searches_dir_path + 'two_hits.json', 'r') as f:
 
 class TestWrappeeProperty(unittest.TestCase):
     def test_two_hits(self):
-        search = SearchWrapper(two_hits)
-        self.assertIs(search.wrappee, two_hits)
+        wrappee = example_searches['two_hits']
+        search = SearchWrapper(wrappee)
+        self.assertIs(search.wrappee, wrappee)
 
 
 class TestQueryTitleGetter(unittest.TestCase):
     def test_two_hits(self):
-        search = SearchWrapper(two_hits)
+        search = SearchWrapper(example_searches['two_hits'])
         self.assertEqual(search.query_title, 'read3')
 
 
 class TestHitsGetter(unittest.TestCase):
     def test_zero_hits(self):
-        search = SearchWrapper(zero_hits)
+        search = SearchWrapper(example_searches['zero_hits'])
         self.assertEqual(len(search.hits), 0)
 
     def test_two_hits(self):
-        search = SearchWrapper(two_hits)
+        search = SearchWrapper(example_searches['two_hits'])
         self.assertEqual(len(search.hits), 2)
         hit1 = search.hits[0]
         hit2 = search.hits[1]
@@ -47,9 +48,9 @@ class TestHitsGetter(unittest.TestCase):
 
 class TestNumHitsGetter(unittest.TestCase):
     def test_zero_hits(self):
-        search = SearchWrapper(zero_hits)
+        search = SearchWrapper(example_searches['zero_hits'])
         self.assertEqual(search.num_hits, 0)
 
     def test_two_hits(self):
-        search = SearchWrapper(two_hits)
+        search = SearchWrapper(example_searches['two_hits'])
         self.assertEqual(search.num_hits, 2)
