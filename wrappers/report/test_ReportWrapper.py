@@ -10,12 +10,10 @@ example_reports_dir_path = 'wrappers/report/example_reports/'
 example_reports = {}
 
 with open(example_reports_dir_path + 'unkeyed.json', 'r') as f:
-    unkeyed = json.loads(f.read())
-    example_reports['unkeyed'] = unkeyed
+    example_reports['unkeyed'] = json.loads(f.read())
 
 with open(example_reports_dir_path + 'keyed.json', 'r') as f:
-    keyed = json.loads(f.read())
-    example_reports['keyed'] = keyed
+    example_reports['keyed'] = json.loads(f.read())
 
 
 class TestWrappeeProperty(unittest.TestCase):
