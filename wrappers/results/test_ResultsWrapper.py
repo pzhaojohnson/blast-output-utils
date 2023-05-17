@@ -5,7 +5,9 @@ import json
 from wrappers.results.ResultsWrapper import ResultsWrapper
 
 
-with open('wrappers/results/example_results/results1.json', 'r') as f:
+example_results_dir_path = 'wrappers/results/example_results/'
+
+with open(example_results_dir_path + 'results1.json', 'r') as f:
     results1 = json.loads(f.read())
 
 
