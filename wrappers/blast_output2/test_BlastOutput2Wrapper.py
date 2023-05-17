@@ -7,14 +7,19 @@ from wrappers.blast_output2.BlastOutput2Wrapper import BlastOutput2Wrapper
 
 examples_directory_path = 'wrappers/blast_output2/example_blast_output2s/'
 
+example_blast_output2s = {}
+
 with open(examples_directory_path + 'unkeyed.json', 'r') as f:
     unkeyed = json.loads(f.read())
+    example_blast_output2s['unkeyed'] = unkeyed
 
 with open(examples_directory_path + 'keyed.json', 'r') as f:
     keyed = json.loads(f.read())
+    example_blast_output2s['keyed'] = keyed
 
 with open(examples_directory_path + 'zero_reports.json', 'r') as f:
     zero_reports = json.loads(f.read())
+    example_blast_output2s['zero_reports'] = zero_reports
 
 
 class TestWrappeeProperty(unittest.TestCase):
