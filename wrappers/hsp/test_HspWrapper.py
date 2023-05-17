@@ -7,14 +7,19 @@ from wrappers.hsp.HspWrapper import HspWrapper
 
 example_hsps_dir_path = 'wrappers/hsp/example_hsps/'
 
+example_hsps = {}
+
 with open(example_hsps_dir_path + 'hsp1.json', 'r') as f:
     hsp1 = json.loads(f.read())
+    example_hsps['hsp1'] = hsp1
 
 with open(example_hsps_dir_path + 'plus_hit_strand.json', 'r') as f:
     plus_hit_strand = json.loads(f.read())
+    example_hsps['plus_hit_strand'] = plus_hit_strand
 
 with open(example_hsps_dir_path + 'minus_hit_strand.json', 'r') as f:
     minus_hit_strand = json.loads(f.read())
+    example_hsps['minus_hit_strand'] = minus_hit_strand
 
 
 class TestWrappeeProperty(unittest.TestCase):
