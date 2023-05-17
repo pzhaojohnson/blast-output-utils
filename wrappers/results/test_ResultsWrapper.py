@@ -16,13 +16,14 @@ with open(example_results_dir_path + 'results1.json', 'r') as f:
 
 class TestWrappeeProperty(unittest.TestCase):
     def test_results1(self):
-        results = ResultsWrapper(results1)
-        self.assertIs(results.wrappee, results1)
+        wrappee = example_results['results1']
+        results = ResultsWrapper(wrappee)
+        self.assertIs(results.wrappee, wrappee)
 
 
 class TestSearchGetter(unittest.TestCase):
     def test_results1(self):
-        results = ResultsWrapper(results1)
+        results = ResultsWrapper(example_results['results1'])
         search = results.search
         # just check some search values
         self.assertEqual(search.hits[0].hsps[0].hit_from, 683)
