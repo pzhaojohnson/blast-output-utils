@@ -10,12 +10,10 @@ example_searches_dir_path = 'wrappers/search/example_searches/'
 example_searches = {}
 
 with open(example_searches_dir_path + 'zero_hits.json', 'r') as f:
-    zero_hits = json.loads(f.read())
-    example_searches['zero_hits'] = zero_hits
+    example_searches['zero_hits'] = json.loads(f.read())
 
 with open(example_searches_dir_path + 'two_hits.json', 'r') as f:
-    two_hits = json.loads(f.read())
-    example_searches['two_hits'] = two_hits
+    example_searches['two_hits'] = json.loads(f.read())
 
 
 class TestWrappeeProperty(unittest.TestCase):
