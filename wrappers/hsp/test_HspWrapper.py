@@ -5,13 +5,15 @@ import json
 from wrappers.hsp.HspWrapper import HspWrapper
 
 
-with open('wrappers/hsp/example_hsps/hsp1.json', 'r') as f:
+example_hsps_dir_path = 'wrappers/hsp/example_hsps/'
+
+with open(example_hsps_dir_path + 'hsp1.json', 'r') as f:
     hsp1 = json.loads(f.read())
 
-with open('wrappers/hsp/example_hsps/plus_hit_strand.json', 'r') as f:
+with open(example_hsps_dir_path + 'plus_hit_strand.json', 'r') as f:
     plus_hit_strand = json.loads(f.read())
 
-with open('wrappers/hsp/example_hsps/minus_hit_strand.json', 'r') as f:
+with open(example_hsps_dir_path + 'minus_hit_strand.json', 'r') as f:
     minus_hit_strand = json.loads(f.read())
 
 
